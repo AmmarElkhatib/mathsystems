@@ -21,9 +21,6 @@ function convert() {
         case 'quaternary':
             decimalNumber = parseInt(number, 4);
             break;
-        case 'sexagesimal':
-            decimalNumber = sexagesimalToDecimal(number);
-            break;
         default:
             alert('Invalid input system selected.');
             return;
@@ -47,9 +44,6 @@ function convert() {
         case 'quaternary':
             result = decimalNumber.toString(4);
             break;
-        case 'sexagesimal':
-            result = decimalToSexagesimal(decimalNumber);
-            break;
         default:
             alert('Invalid output system selected.');
             return;
@@ -57,24 +51,4 @@ function convert() {
 
     // Display the result
     document.getElementById('result').innerText = `Result: ${result}`;
-}
-
-// Function to convert Sexagesimal (Base 60) to Decimal (Base 10)
-function sexagesimalToDecimal(number) {
-    const digits = number.split(':').reverse();
-    let decimal = 0;
-    for (let i = 0; i < digits.length; i++) {
-        decimal += parseInt(digits[i], 10) * Math.pow(60, i);
-    }
-    return decimal;
-}
-
-// Function to convert Decimal (Base 10) to Sexagesimal (Base 60)
-function decimalToSexagesimal(decimal) {
-    let sexagesimal = [];
-    while (decimal > 0) {
-        sexagesimal.push(decimal % 60);
-        decimal = Math.floor(decimal / 60);
-    }
-    return sexagesimal.reverse().join(':');
 }
