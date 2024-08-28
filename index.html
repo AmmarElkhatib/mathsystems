@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="converter">
+        <h1>Number System Converter</h1>
+        <div class="form-group">
+            <label for="input-system">Select Input System:</label>
+            <select id="input-system">
+                <option value="decimal">Decimal (Base 10)</option>
+                <option value="binary">Binary (Base 2)</option>
+                <option value="quaternary">Quaternary (Base 4)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="number-input">Enter the Number:</label>
+            <input type="text" id="number-input" placeholder="Enter the number">
+        </div>
+        <div class="form-group">
+            <label for="output-system">Select Output System:</label>
+            <select id="output-system">
+                <option value="decimal">Decimal (Base 10)</option>
+                <option value="binary">Binary (Base 2)</option>
+                <option value="quaternary">Quaternary (Base 4)</option>
+            </select>
+        </div>
+        <button onclick="convert()">Convert</button>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
